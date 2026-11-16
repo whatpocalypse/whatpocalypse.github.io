@@ -1,0 +1,340 @@
+/*! Inter Display (Inter 4.001, opsz 32, wght 400 to 800, subset). Copyright 2016 The Inter Project Authors. SIL Open Font License 1.1: /fonts/OFL.txt */
+@font-face {
+  font-family: "Inter Display";
+  src: url("data:font/woff;base64,{{FONT_DATA}}") format("woff");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --black: #05070B;
+  --white: #F3F0EA;
+  --sun: #FFB070;
+  --blue: #5A8CFF;
+  --muted: rgba(243, 240, 234, 0.74);
+  --line: rgba(243, 240, 234, 0.14);
+  --panel: rgba(243, 240, 234, 0.035);
+  --measure: 44rem;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--black);
+  background-image:
+    radial-gradient(1px 1px at 23px 41px, rgba(243, 240, 234, 0.55), transparent 60%),
+    radial-gradient(1px 1px at 141px 167px, rgba(243, 240, 234, 0.35), transparent 60%),
+    radial-gradient(1.5px 1.5px at 88px 260px, rgba(243, 240, 234, 0.45), transparent 60%),
+    radial-gradient(1px 1px at 301px 73px, rgba(243, 240, 234, 0.3), transparent 60%),
+    radial-gradient(1px 1px at 410px 389px, rgba(255, 176, 112, 0.35), transparent 60%),
+    radial-gradient(1px 1px at 517px 211px, rgba(243, 240, 234, 0.4), transparent 60%);
+  background-size: 217px 293px, 331px 251px, 389px 347px, 463px 401px, 571px 523px, 613px 467px;
+  color: var(--white);
+  font-family: "Inter Display", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: var(--sun);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease, border-color 0.15s ease;
+}
+
+a:hover { color: var(--blue); text-decoration-color: var(--blue); }
+
+a:focus-visible, .follow a:focus-visible {
+  outline: 2px solid var(--sun);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--white);
+  color: var(--black);
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.skip:focus { top: 1rem; color: var(--black); }
+
+.wrap {
+  width: 100%;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Hero (home page) */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: min(92vh, 56rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.25rem max(12vw, 7rem);
+  text-align: center;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 5rem), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 5rem), transparent);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: max(8vw, 3.5rem);
+  width: min(70rem, 120vw);
+  height: 22rem;
+  transform: translate(-50%, 50%);
+  background: radial-gradient(ellipse 50% 40% at 50% 50%, rgba(255, 176, 112, 0.28), rgba(255, 176, 112, 0.08) 55%, transparent 75%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(100% - max(8vw, 3.5rem));
+  width: max(220vw, 70rem);
+  height: max(220vw, 70rem);
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 0, #0d1220 0, #070a12 12%, var(--black) 30%);
+  box-shadow:
+    0 -1px 0 rgba(170, 196, 255, 0.55),
+    0 -4px 14px rgba(90, 140, 255, 0.35),
+    0 -24px 80px rgba(255, 176, 112, 0.2);
+  pointer-events: none;
+}
+
+.hero > * { position: relative; z-index: 1; }
+
+.mark {
+  display: block;
+  color: var(--white);
+}
+
+.hero .mark {
+  width: clamp(7.5rem, 22vw, 11rem);
+  height: auto;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 0 1.4rem rgba(243, 240, 234, 0.28));
+}
+
+.wordmark {
+  margin: 0;
+  font-size: clamp(2.1rem, 8.2vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.slogan {
+  margin: 1.1rem 0 0;
+  color: var(--sun);
+  font-size: clamp(1.15rem, 3.6vw, 1.6rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+/* Home page sections */
+
+main .wrap { padding-top: 3.5rem; }
+
+.lead {
+  margin: 0;
+  font-size: clamp(1.2rem, 3.2vw, 1.45rem);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.lead + p { color: var(--muted); margin: 1.25rem 0 0; }
+
+.kicker {
+  margin: 0 0 0.6rem;
+  color: var(--sun);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pillars li {
+  padding: 1.25rem 1.25rem 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.pillars h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.pillars p:not(.kicker) { margin: 0; color: var(--muted); font-size: 0.98rem; line-height: 1.55; }
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.45rem, 4vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+}
+
+.follow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.follow a {
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 9.5rem;
+  padding: 0.8rem 1.15rem;
+  border: 1px solid rgba(255, 176, 112, 0.55);
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.follow a span {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.88rem;
+  transition: color 0.15s ease;
+}
+
+.follow a:hover { border-color: var(--blue); color: var(--blue); }
+.follow a:hover span { color: var(--blue); }
+
+/* Legal pages */
+
+.bar {
+  border-bottom: 1px solid var(--line);
+}
+
+.bar .wrap {
+  display: flex;
+  align-items: center;
+  min-height: 4.25rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brand .mark { width: 2rem; height: 2rem; }
+
+.doc { padding-top: 3rem; }
+
+.doc h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.doc .meta { margin: 0.75rem 0 0; color: var(--sun); font-weight: 600; }
+
+.doc .intro { margin-top: 1.75rem; font-size: 1.15rem; }
+
+.doc h2 {
+  margin: 2.5rem 0 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 1.3rem;
+}
+
+.doc p, .doc li { color: rgba(243, 240, 234, 0.86); }
+.doc ul { padding-left: 1.25rem; }
+.doc li { margin: 0.4rem 0; }
+.doc li::marker { color: var(--sun); }
+.doc strong { color: var(--white); font-weight: 650; }
+
+code {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
+  font-size: 0.88em;
+  padding: 0.1em 0.35em;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--panel);
+  overflow-wrap: anywhere;
+}
+
+/* Footer */
+
+.foot {
+  margin-top: 4.5rem;
+  padding: 1.75rem 0 2.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.foot .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  justify-content: space-between;
+}
+
+.foot nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+.foot p { margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+@media (forced-colors: active) {
+  .hero::before, .hero::after { display: none; }
+  .follow a, .pillars li { border-color: CanvasText; }
+}
